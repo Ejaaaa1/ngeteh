@@ -10,7 +10,7 @@ import logging, time, sys
 load_dotenv()
 
 
-logging.basicos.environ.get(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
 
 # variables
