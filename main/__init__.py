@@ -20,6 +20,6 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 SESSION = os.environ.get("SESSION", "")
 FORCESUB = os.environ.get("FORCESUB", "")
 AUTH = int(os.environ.get("AUTH", ""))
-MONGO_URL = os.environ.get("MONGO_URL", "")
+MONGODB_URI = os.environ.get("MONGODB_URI", "")
 
 bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
