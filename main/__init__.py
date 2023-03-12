@@ -1,20 +1,25 @@
-#ChauhanMahesh/Vasusen/DroneBots/COL
+import os
 
-from telethon import TelegramClient
-from decouple import config
-import logging
-import time
+from dotenv import load_dotenv
+from pyrogram import Client
 
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+from telethon.sessions import StringSession
+from telethon.sync import TelegramClient
+
+import logging, time, sys
+load_dotenv()
+
+
+logging.basicos.environ.get(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
 
 # variables
-API_ID = 3599592
-API_HASH = "80865dfca1e192f81931cbf61203cfe7"
-BOT_TOKEN = "5851808236:AAEc8zGr6Rd1EKbN5x3kAXXICMQepT24mJY"
-FORCESUB = 1485129059
-ACCESS = int("-1001856033450")
-MONGODB_URI = "mongodb+srv://Caanolisurukar:Caanolisurukar@cluster0.gs9clvq.mongodb.net/?retryWrites=true&w=majority"
-AUTH_USERS = 1058482162
+API_ID = int(os.environ.get("API_ID", ""))
+API_HASH = os.environ.get("API_HASH", " )
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+SESSION = os.environ.get("SESSION", "")
+FORCESUB = os.environ.get("FORCESUB", "")
+AUTH = int(os.environ.get("AUTH", ""))
+MONGO_URL = os.environ.get("MONGO_URL", "")
 
-bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN) 
+bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
